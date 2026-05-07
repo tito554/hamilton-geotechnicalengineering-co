@@ -1,0 +1,51 @@
+# Geotechnicalengineering — Hamilton
+
+> Geotechnical engineering services in Hamilton, Canada.
+
+## Services
+- [Anchors](https://hamilton.geotechnicalengineering.co/anchors/)
+- [Atterberg Limits](https://hamilton.geotechnicalengineering.co/atterberg-limits/)
+- [Cbr Road](https://hamilton.geotechnicalengineering.co/cbr-road/)
+- [Cpt Test](https://hamilton.geotechnicalengineering.co/cpt-test/)
+- [Deep Excavations](https://hamilton.geotechnicalengineering.co/deep-excavations/)
+- [Excavation Monitoring](https://hamilton.geotechnicalengineering.co/excavation-monitoring/)
+- [Excavations](https://hamilton.geotechnicalengineering.co/excavations/)
+- [Flexible Pavement](https://hamilton.geotechnicalengineering.co/flexible-pavement/)
+- [Footings](https://hamilton.geotechnicalengineering.co/footings/)
+- [Foundations](https://hamilton.geotechnicalengineering.co/foundations/)
+- [Grain Size](https://hamilton.geotechnicalengineering.co/grain-size/)
+- [Ground Improvement](https://hamilton.geotechnicalengineering.co/ground-improvement/)
+- [Grouting](https://hamilton.geotechnicalengineering.co/grouting/)
+- [In Situ Permeability](https://hamilton.geotechnicalengineering.co/in-situ-permeability/)
+- [Investigation](https://hamilton.geotechnicalengineering.co/investigation/)
+- [Lab In Situ](https://hamilton.geotechnicalengineering.co/lab-in-situ/)
+- [Laboratory](https://hamilton.geotechnicalengineering.co/laboratory/)
+- [Liquefaction](https://hamilton.geotechnicalengineering.co/liquefaction/)
+- [Masw](https://hamilton.geotechnicalengineering.co/masw/)
+- [Mat Foundations](https://hamilton.geotechnicalengineering.co/mat-foundations/)
+- [Piles](https://hamilton.geotechnicalengineering.co/piles/)
+- [Proctor Tests](https://hamilton.geotechnicalengineering.co/proctor-tests/)
+- [Resistivity](https://hamilton.geotechnicalengineering.co/resistivity/)
+- [Retaining Walls](https://hamilton.geotechnicalengineering.co/retaining-walls/)
+- [Rigid Pavement](https://hamilton.geotechnicalengineering.co/rigid-pavement/)
+- [Road Geotechnics](https://hamilton.geotechnicalengineering.co/road-geotechnics/)
+- [Sand Cone Density](https://hamilton.geotechnicalengineering.co/sand-cone-density/)
+- [Seismic](https://hamilton.geotechnicalengineering.co/seismic/)
+- [Seismic Isolation](https://hamilton.geotechnicalengineering.co/seismic-isolation/)
+- [Seismic Microzonation](https://hamilton.geotechnicalengineering.co/seismic-microzonation/)
+- [Seismic Refraction](https://hamilton.geotechnicalengineering.co/seismic-refraction/)
+- [Slope Stability](https://hamilton.geotechnicalengineering.co/slope-stability/)
+- [Slopes](https://hamilton.geotechnicalengineering.co/slopes/)
+- [Soft Ground Tunnels](https://hamilton.geotechnicalengineering.co/soft-ground-tunnels/)
+- [Spt Drilling](https://hamilton.geotechnicalengineering.co/spt-drilling/)
+- [Stone Columns](https://hamilton.geotechnicalengineering.co/stone-columns/)
+- [Test Pits](https://hamilton.geotechnicalengineering.co/test-pits/)
+- [Triaxial](https://hamilton.geotechnicalengineering.co/triaxial/)
+- [Vibrocompaction](https://hamilton.geotechnicalengineering.co/vibrocompaction/)
+
+## Contact
+- Website: https://hamilton.geotechnicalengineering.co/
+
+## About
+This site provides geotechnical engineering services in Hamilton, Canada.
+Compliant with local and international standards (ASTM, ISO, country-specific norms).
