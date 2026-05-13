@@ -25,6 +25,11 @@
 
 @media (max-width: 900px) {
     .sidebar { display: none; }
+    .content-area { flex-direction: column; }
+    .container { padding: 1rem; }
+    .header-top { flex-direction: column; text-align: center; }
+    main { padding: 1.5rem; }
+}
 .header-contact a:hover { color: white; }
 main h2 { color: var(--dark); font-size: 1.35rem; margin: 2rem 0 1rem; padding-bottom: .5rem; border-bottom: 2px solid #e2e8f0; font-weight: 600; }
 .sidebar .cat-sub {
@@ -93,13 +98,13 @@ summary::-webkit-details-marker { display: none; }
 .sidebar { padding: .5rem 0; }
 .cta .contacto-line { font-size: 1rem; margin: .5rem 0; }
 .sidebar .cat-toggle[aria-expanded="true"] .cat-arrow { transform: rotate(180deg); display: inline-block; }
-    .content-area { flex-direction: column; }
+    
 .sidebar .cat-sub a {
     display: block; padding: .4rem 1rem .4rem 1.75rem; color: rgba(255,255,255,0.7);
     font-size: .78rem; transition: all .15s; text-decoration: none;
     border-left: 2px solid transparent;
 }
-    .container { padding: 1rem; }
+    
 
 details { margin-bottom: .75rem; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
 .sidebar .cat-name:hover { color: #c9a961; }
@@ -113,7 +118,7 @@ table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: .9r
 details p { padding: .75rem 1.25rem; font-size: .9rem; color: #475569; margin: 0; }
 main p { margin-bottom: 1rem; color: #334155; }
 .cta h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.25rem; color: white; border: none; padding: 0; }
-    .header-top { flex-direction: column; text-align: center; }
+    
 .sidebar .cat-row:hover { background: rgba(255,255,255,0.08); }
 
 #mapa-ciudad { height: 240px; max-width: 630px; margin: 1.5rem auto; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
@@ -131,9 +136,28 @@ body { font-family: var(--font-b); color: var(--text); background: var(--bg); li
 }
 .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 .sidebar .cat-sub a:hover { color: #c9a961; background: rgba(201,169,97,0.06); border-left-color: #c9a961; }
-    main { padding: 1.5rem; }
-a { color: var(--primary); text-decoration: none; }</style>
-<link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#581C87"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></head>
+    
+a { color: var(--primary); text-decoration: none; }
+
+</style>
+<link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#581C87"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><style id="minimal-fix-v5">
+/* Sticky para navbar específicos (NO header.hero) */
+.topbar, .navbar, .header-top, .main-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1010 !important;
+}
+header.hero, .hero { position: relative !important; }
+/* Dropdowns por encima del hero */
+.dd, .has-dd .dd, .nav-item .dd {
+  z-index: 1100 !important;
+}
+/* Leaflet contained */
+.leaflet-pane { z-index: 400 !important; }
+.leaflet-control { z-index: 800 !important; }
+.leaflet-container { z-index: 1 !important; }
+</style>
+</head>
 <body>
 
 <header>
@@ -155,7 +179,7 @@ a { color: var(--primary); text-decoration: none; }</style>
 <div class="container">
     <div class="content-area">
         <aside class="sidebar">
-            <nav><a href="index.html" class="home">Home</a><div class="cat-item" data-cat="investigation"><div class="cat-row"><a href="/investigation/" class="cat-name">Investigation</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Investigation"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/cpt-test/">CPT (Cone Penetration Test)</a></div></div><div class="cat-item" data-cat="lab-in-situ"><div class="cat-row"><a href="/lab-in-situ/" class="cat-name">In-Situ Testing</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir In-Situ Testing"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/sand-cone-density/">Field density test (sand cone method)</a></div></div><div class="cat-item" data-cat="laboratory"><div class="cat-row"><a href="/laboratory/" class="cat-name">Laboratory</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Laboratory"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/atterberg-limits/">Atterberg limits</a><a href="/grain-size/">Grain size analysis (sieve + hydrometer)</a></div></div><div class="cat-item" data-cat="foundations"><div class="cat-row"><a href="/foundations/" class="cat-name">Foundations</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Foundations"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/piles/">Pile foundation design</a></div></div><div class="cat-item" data-cat="slopes"><div class="cat-row"><a href="/slopes/" class="cat-name">Slopes & Walls</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Slopes & Walls"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/anchors/">Active/passive anchor design</a><a href="/retaining-walls/">Retaining wall design</a><a href="/slope-stability/">Slope stability analysis</a></div></div><div class="cat-item" data-cat="ground-improvement"><div class="cat-row"><a href="/ground-improvement/" class="cat-name">Ground improvement</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Ground improvement"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/stone-columns/">Stone column design</a><a href="/vibrocompaction/">Vibrocompaction design</a></div></div><div class="cat-item" data-cat="seismic"><div class="cat-row"><a href="/seismic/" class="cat-name">Seismic</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Seismic"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/seismic-isolation/">Base isolation seismic design</a><a href="/seismic-microzonation/">Seismic microzonation</a><a href="/liquefaction/">Soil liquefaction analysis</a></div></div><div class="cat-item" data-cat="road-geotechnics"><div class="cat-row"><a href="/road-geotechnics/" class="cat-name">Roadway</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Roadway"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/cbr-road/">CBR study for road design</a><a href="/flexible-pavement/">Flexible pavement design</a><a href="/rigid-pavement/">Rigid pavement design</a></div></div><div class="cat-item" data-cat="excavations"><div class="cat-row"><a href="/excavations/" class="cat-name">Underground Excavations</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Underground Excavations"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/soft-ground-tunnels/">Geotechnical analysis for soft soil tunnels</a><a href="/deep-excavations/">Geotechnical design of deep excavations</a><a href="/excavation-monitoring/">Geotechnical excavation monitoring</a></div></div></nav>
+            <nav><a href="index.html" class="home">Home</a><div class="cat-item" data-cat="investigation"><div class="cat-row"><a href="/investigation/" class="cat-name">Investigation</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Investigation"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/cpt-test/">CPT (Cone Penetration Test)</a></div></div><div class="cat-item" data-cat="lab-in-situ"><div class="cat-row"><a href="/lab-in-situ/" class="cat-name">In-Situ</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir In-Situ"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/sand-cone-density/">Field density test (sand cone method)</a></div></div><div class="cat-item" data-cat="laboratory"><div class="cat-row"><a href="/laboratory/" class="cat-name">Laboratory</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Laboratory"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/atterberg-limits/">Atterberg limits</a><a href="/grain-size/">Grain size analysis (sieve + hydrometer)</a></div></div><div class="cat-item" data-cat="foundations"><div class="cat-row"><a href="/foundations/" class="cat-name">Foundations</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Foundations"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/piles/">Pile foundation design</a></div></div><div class="cat-item" data-cat="slopes"><div class="cat-row"><a href="/slopes/" class="cat-name">Slopes & Walls</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Slopes & Walls"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/anchors/">Active/passive anchor design</a><a href="/retaining-walls/">Retaining wall design</a><a href="/slope-stability/">Slope stability analysis</a></div></div><div class="cat-item" data-cat="ground-improvement"><div class="cat-row"><a href="/ground-improvement/" class="cat-name">Improvement</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Improvement"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/stone-columns/">Stone column design</a><a href="/vibrocompaction/">Vibrocompaction design</a></div></div><div class="cat-item" data-cat="seismic"><div class="cat-row"><a href="/seismic/" class="cat-name">Seismic</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Seismic"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/seismic-isolation/">Base isolation seismic design</a><a href="/seismic-microzonation/">Seismic microzonation</a><a href="/liquefaction/">Soil liquefaction analysis</a></div></div><div class="cat-item" data-cat="road-geotechnics"><div class="cat-row"><a href="/road-geotechnics/" class="cat-name">Roadway</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Roadway"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/cbr-road/">CBR study for road design</a><a href="/flexible-pavement/">Flexible pavement design</a><a href="/rigid-pavement/">Rigid pavement design</a></div></div><div class="cat-item" data-cat="excavations"><div class="cat-row"><a href="/excavations/" class="cat-name">Excavations</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Excavations"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/soft-ground-tunnels/">Geotechnical analysis for soft soil tunnels</a><a href="/deep-excavations/">Geotechnical design of deep excavations</a><a href="/excavation-monitoring/">Geotechnical excavation monitoring</a></div></div></nav>
         </aside>
         <main>
             <section><p>Hamilton sits at the western tip of Lake Ontario, where the geology shifts from the shale of the Niagara Escarpment to thick deposits of glaciolacustrine clay that can extend 30 meters deep. This clay, part of the former glacial Lake Iroquois bed, is highly plastic and sensitive to moisture changes. When a contractor encounters sticky grey material during excavation, the real question is not just what it looks like, but how it will behave under load and varying water content. Atterberg limits testing answers that question directly. By measuring the liquid limit, plastic limit, and plasticity index according to ASTM D4318, we classify the fine-grained fraction and predict volume change potential. For sites near Red Hill Valley or the bayfront industrial area, this data often becomes the deciding factor in foundation design and earthwork specifications.</p></section>
@@ -177,6 +201,8 @@ a { color: var(--primary); text-decoration: none; }</style>
 
             <section>
                 <h2>Typical technical challenges in Hamilton</h2>
+<hr style="border:none;height:2px;background:linear-gradient(90deg,transparent,#A16207,transparent);margin:2rem 0;width:60%;margin-left:auto;margin-right:auto">
+
                 <p>Hamilton's climate delivers wet springs, dry summers, and freeze-thaw cycles that penetrate over a meter into the ground during winter. High-plasticity clay responds to each of these seasons: it swells in April when the snowmelt saturates the ground, then shrinks and cracks in August when the upper layer dries out. A slab-on-grade built without knowing the soil's plasticity index will heave, crack, and separate from the walls within three to five years. The Atterberg limits give you a direct measure of that risk. If the plasticity index exceeds 20%, the geotechnical recommendation almost always shifts toward removing and replacing the active zone, or designing a suspended floor system. On industrial sites near the steel mills where fill material is common, we run Atterberg tests on the natural subgrade below the fill to confirm the bearing stratum is stable.</p>
             </section>
 
@@ -201,6 +227,8 @@ a { color: var(--primary); text-decoration: none; }</style>
 
             <section>
                 <h2>FAQ</h2>
+<hr style="border:none;height:2px;background:linear-gradient(90deg,transparent,#A16207,transparent);margin:2rem 0;width:60%;margin-left:auto;margin-right:auto">
+
                 <details><summary>What do Atterberg limits actually tell me about the soil on my Hamilton lot?</summary><p>The liquid limit marks the water content where the soil transitions from plastic to liquid behavior. The plastic limit is the point where it stops being moldable and starts crumbling. The difference between them—the plasticity index—indicates how much water the soil can absorb while remaining solid. A high PI means the soil will shrink and swell dramatically with moisture changes, which is common in Hamilton's glaciolacustrine clays.</p></details><details><summary>How much does Atterberg limits testing cost for a typical residential project in Hamilton?</summary><p>For a standard set of Atterberg limits (liquid limit, plastic limit, and plasticity index) on one sample, the cost ranges from CA$90 to CA$120. Most residential investigations run two to three samples from different depths, which brings the total to CA$250–CA$350 including sample preparation and the classification report.</p></details><details><summary>How long does the test take from sample collection to report?</summary><p>The laboratory procedure requires oven-drying the sample, wet sieving through a No. 40 sieve, and then performing the Casagrande cup and thread-rolling tests. From the day we receive the sample, the standard turnaround is three to four business days. Rush service can deliver results in 24 hours when construction is waiting.</p></details><details><summary>Can you classify the soil type using only Atterberg limits?</summary><p>Atterberg limits classify the fine-grained portion of the soil—the silt and clay fraction. To get the full USCS classification (for example, sandy lean clay vs. fat clay), we also need the grain size distribution from a sieve and hydrometer analysis. The two tests together provide a complete picture.</p></details><details><summary>What happens if the plasticity index comes back high on my site?</summary><p>A high PI, typically above 25%, flags the soil as expansive. The standard engineering response in Hamilton is to either over-excavate and replace the active clay layer with granular fill, or to design a structurally reinforced slab with void forms underneath. The exact solution depends on the depth of the active zone and the building loads. <a href="/anchors/" data-interlink="1">More info</a>.</p></details>
             </section>
 
@@ -210,7 +238,7 @@ a { color: var(--primary); text-decoration: none; }</style>
                 <div id="mapa-ciudad"></div>
                 <script src="/js/leaflet.js"></script>
                 <script>
-                    var map = L.map('mapa-ciudad').setView([43.2561,-79.8729], 12);
+var map = L.map('mapa-ciudad').setView([43.2561,-79.8729], 12);
                     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}@2x.png',{attribution:'&copy; OSM &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
                     L.circle([43.2561,-79.8729],{radius:3000,color:'#8B5CF6',fillColor:'#A78BFA',fillOpacity:0.18,weight:2}).addTo(map).bindPopup('Coverage area — Hamilton');
                 </script>

@@ -25,6 +25,11 @@
 
 @media (max-width: 900px) {
     .sidebar { display: none; }
+    .content-area { flex-direction: column; }
+    .container { padding: 1rem; }
+    .header-top { flex-direction: column; text-align: center; }
+    main { padding: 1.5rem; }
+}
 .header-contact a:hover { color: white; }
 main h2 { color: var(--dark); font-size: 1.35rem; margin: 2rem 0 1rem; padding-bottom: .5rem; border-bottom: 2px solid #e2e8f0; font-weight: 600; }
 .sidebar .cat-sub {
@@ -93,13 +98,13 @@ summary::-webkit-details-marker { display: none; }
 .sidebar { padding: .5rem 0; }
 .cta .contacto-line { font-size: 1rem; margin: .5rem 0; }
 .sidebar .cat-toggle[aria-expanded="true"] .cat-arrow { transform: rotate(180deg); display: inline-block; }
-    .content-area { flex-direction: column; }
+    
 .sidebar .cat-sub a {
     display: block; padding: .4rem 1rem .4rem 1.75rem; color: rgba(255,255,255,0.7);
     font-size: .78rem; transition: all .15s; text-decoration: none;
     border-left: 2px solid transparent;
 }
-    .container { padding: 1rem; }
+    
 
 details { margin-bottom: .75rem; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
 .sidebar .cat-name:hover { color: #c9a961; }
@@ -113,7 +118,7 @@ table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: .9r
 details p { padding: .75rem 1.25rem; font-size: .9rem; color: #475569; margin: 0; }
 main p { margin-bottom: 1rem; color: #334155; }
 .cta h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.25rem; color: white; border: none; padding: 0; }
-    .header-top { flex-direction: column; text-align: center; }
+    
 .sidebar .cat-row:hover { background: rgba(255,255,255,0.08); }
 
 #mapa-ciudad { height: 240px; max-width: 630px; margin: 1.5rem auto; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
@@ -131,9 +136,28 @@ body { font-family: var(--font-b); color: var(--text); background: var(--bg); li
 }
 .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 .sidebar .cat-sub a:hover { color: #c9a961; background: rgba(201,169,97,0.06); border-left-color: #c9a961; }
-    main { padding: 1.5rem; }
-a { color: var(--primary); text-decoration: none; }</style>
-<link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#581C87"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></head>
+    
+a { color: var(--primary); text-decoration: none; }
+
+</style>
+<link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#581C87"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><style id="minimal-fix-v5">
+/* Sticky para navbar específicos (NO header.hero) */
+.topbar, .navbar, .header-top, .main-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1010 !important;
+}
+header.hero, .hero { position: relative !important; }
+/* Dropdowns por encima del hero */
+.dd, .has-dd .dd, .nav-item .dd {
+  z-index: 1100 !important;
+}
+/* Leaflet contained */
+.leaflet-pane { z-index: 400 !important; }
+.leaflet-control { z-index: 800 !important; }
+.leaflet-container { z-index: 1 !important; }
+</style>
+</head>
 <body>
 
 <header>
@@ -155,7 +179,7 @@ a { color: var(--primary); text-decoration: none; }</style>
 <div class="container">
     <div class="content-area">
         <aside class="sidebar">
-            <nav><a href="index.html" class="home">Home</a><div class="cat-item" data-cat="investigation"><div class="cat-row"><a href="/investigation/" class="cat-name">Investigation</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Investigation"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/cpt-test/">CPT (Cone Penetration Test)</a></div></div><div class="cat-item" data-cat="lab-in-situ"><div class="cat-row"><a href="/lab-in-situ/" class="cat-name">In-Situ Testing</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir In-Situ Testing"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/sand-cone-density/">Field density test (sand cone method)</a></div></div><div class="cat-item" data-cat="laboratory"><div class="cat-row"><a href="/laboratory/" class="cat-name">Laboratory</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Laboratory"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/atterberg-limits/">Atterberg limits</a><a href="/grain-size/">Grain size analysis (sieve + hydrometer)</a></div></div><div class="cat-item" data-cat="foundations"><div class="cat-row"><a href="/foundations/" class="cat-name">Foundations</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Foundations"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/piles/">Pile foundation design</a></div></div><div class="cat-item" data-cat="slopes"><div class="cat-row"><a href="/slopes/" class="cat-name">Slopes & Walls</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Slopes & Walls"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/anchors/">Active/passive anchor design</a><a href="/retaining-walls/">Retaining wall design</a><a href="/slope-stability/">Slope stability analysis</a></div></div><div class="cat-item" data-cat="ground-improvement"><div class="cat-row"><a href="/ground-improvement/" class="cat-name">Ground improvement</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Ground improvement"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/stone-columns/">Stone column design</a><a href="/vibrocompaction/">Vibrocompaction design</a></div></div><div class="cat-item" data-cat="seismic"><div class="cat-row"><a href="/seismic/" class="cat-name">Seismic</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Seismic"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/seismic-isolation/">Base isolation seismic design</a><a href="/seismic-microzonation/">Seismic microzonation</a><a href="/liquefaction/">Soil liquefaction analysis</a></div></div><div class="cat-item" data-cat="road-geotechnics"><div class="cat-row"><a href="/road-geotechnics/" class="cat-name">Roadway</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Roadway"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/cbr-road/">CBR study for road design</a><a href="/flexible-pavement/">Flexible pavement design</a><a href="/rigid-pavement/">Rigid pavement design</a></div></div><div class="cat-item" data-cat="excavations"><div class="cat-row"><a href="/excavations/" class="cat-name">Underground Excavations</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Underground Excavations"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/soft-ground-tunnels/">Geotechnical analysis for soft soil tunnels</a><a href="/deep-excavations/">Geotechnical design of deep excavations</a><a href="/excavation-monitoring/">Geotechnical excavation monitoring</a></div></div></nav>
+            <nav><a href="index.html" class="home">Home</a><div class="cat-item" data-cat="investigation"><div class="cat-row"><a href="/investigation/" class="cat-name">Investigation</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Investigation"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/cpt-test/">CPT (Cone Penetration Test)</a></div></div><div class="cat-item" data-cat="lab-in-situ"><div class="cat-row"><a href="/lab-in-situ/" class="cat-name">In-Situ</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir In-Situ"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/sand-cone-density/">Field density test (sand cone method)</a></div></div><div class="cat-item" data-cat="laboratory"><div class="cat-row"><a href="/laboratory/" class="cat-name">Laboratory</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Laboratory"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/atterberg-limits/">Atterberg limits</a><a href="/grain-size/">Grain size analysis (sieve + hydrometer)</a></div></div><div class="cat-item" data-cat="foundations"><div class="cat-row"><a href="/foundations/" class="cat-name">Foundations</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Foundations"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/piles/">Pile foundation design</a></div></div><div class="cat-item" data-cat="slopes"><div class="cat-row"><a href="/slopes/" class="cat-name">Slopes & Walls</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Slopes & Walls"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/anchors/">Active/passive anchor design</a><a href="/retaining-walls/">Retaining wall design</a><a href="/slope-stability/">Slope stability analysis</a></div></div><div class="cat-item" data-cat="ground-improvement"><div class="cat-row"><a href="/ground-improvement/" class="cat-name">Improvement</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Improvement"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/stone-columns/">Stone column design</a><a href="/vibrocompaction/">Vibrocompaction design</a></div></div><div class="cat-item" data-cat="seismic"><div class="cat-row"><a href="/seismic/" class="cat-name">Seismic</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Seismic"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/seismic-isolation/">Base isolation seismic design</a><a href="/seismic-microzonation/">Seismic microzonation</a><a href="/liquefaction/">Soil liquefaction analysis</a></div></div><div class="cat-item" data-cat="road-geotechnics"><div class="cat-row"><a href="/road-geotechnics/" class="cat-name">Roadway</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Roadway"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/cbr-road/">CBR study for road design</a><a href="/flexible-pavement/">Flexible pavement design</a><a href="/rigid-pavement/">Rigid pavement design</a></div></div><div class="cat-item" data-cat="excavations"><div class="cat-row"><a href="/excavations/" class="cat-name">Excavations</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Excavations"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/soft-ground-tunnels/">Geotechnical analysis for soft soil tunnels</a><a href="/deep-excavations/">Geotechnical design of deep excavations</a><a href="/excavation-monitoring/">Geotechnical excavation monitoring</a></div></div></nav>
         </aside>
         <main>
             <section><p>In Hamilton, the contact between the Niagara Escarpment bedrock and the glacial overburden creates a lot of surprises with groundwater. You hit a fractured zone in the Queenston Shale and suddenly the water inflow changes everything. Our team runs field permeability tests—Lefranc for soil and Lugeon for rock—to quantify hydraulic conductivity right where it matters. We don't just hand you a number. We give you context. A <a data-interlink="1" href="/grain-size/">grain-size analysis</a> on samples from the same borehole often explains why a silty clay layer at 3 m is holding water while the underlying till drains freely. And if the goal is a deep excavation near the harbour, combining permeability data with a <a data-interlink="1" href="/deep-excavations/">deep excavation monitoring plan</a> becomes essential to keep the dewatering system sized correctly.</p></section>
@@ -177,6 +201,8 @@ a { color: var(--primary); text-decoration: none; }</style>
 
             <section>
                 <h2>Typical technical challenges in Hamilton</h2>
+<hr style="border:none;height:2px;background:linear-gradient(90deg,transparent,#A16207,transparent);margin:2rem 0;width:60%;margin-left:auto;margin-right:auto">
+
                 <p>Hamilton sits at about 75 m elevation near the lake, rising to over 200 m on the Escarpment. That relief drives groundwater gradients that can destabilize slopes if you misjudge permeability. The 2008 Red Hill Valley Parkway construction showed how perched water tables in the overburden can trigger shallow landslides when drainage is interrupted. A Lefranc test that misses a thin sand seam will underestimate inflow by a factor of ten. For Lugeon testing, the main risk is bypassing the packer seal in fractured dolomite. If the seal leaks, your test data is worthless. We pressure-test the packer seal first, every time. Another risk we see often: contractors who skip permeability testing during dewatering design end up with undersized pumps and constant delays. Getting the permeability profile right on day one is cheap insurance against a flooded excavation six months later.</p>
             </section>
 
@@ -201,6 +227,8 @@ a { color: var(--primary); text-decoration: none; }</style>
 
             <section>
                 <h2>FAQ</h2>
+<hr style="border:none;height:2px;background:linear-gradient(90deg,transparent,#A16207,transparent);margin:2rem 0;width:60%;margin-left:auto;margin-right:auto">
+
                 <details><summary>What is the difference between a Lefranc test and a Lugeon test?</summary><p>The Lefranc test measures hydraulic conductivity in soils. Water is introduced into a cased borehole section with a filter screen, and the flow rate is recorded under constant or falling head. The Lugeon test does the same for rock, using inflatable packers to isolate a specific section of the borehole. A Lugeon value of 1 means 1 litre of water per metre of test section per minute at 1 MPa pressure. In practice, Lefranc is for overburden and Lugeon is for bedrock.</p></details><details><summary>How much does a field permeability test cost in Hamilton?</summary><p>For a Lefranc test at one depth, costs run between CA$740 and CA$1,230 depending on access and whether a drill rig is already on site. A Lugeon test, which requires a packer system and longer test duration, falls in a similar range per test interval. Getting a rig mobilized for a single shallow test will push toward the upper end. The most cost-effective approach is to include permeability testing as part of the main site investigation program.</p></details><details><summary>How many test intervals do I need for a dewatering design?</summary><p>At minimum, one test per distinct soil or rock unit that will be intersected by the excavation. In Hamilton, that often means testing the upper weathered till, any sand or gravel stringers, and the top 5 m of bedrock. For a 6 m deep excavation near the Escarpment, three to four Lefranc tests and two Lugeon intervals would give a reliable permeability profile. More complex sites with artesian conditions or known fracture zones may need a denser test layout.</p></details>
             </section>
 
@@ -210,7 +238,7 @@ a { color: var(--primary); text-decoration: none; }</style>
                 <div id="mapa-ciudad"></div>
                 <script src="/js/leaflet.js"></script>
                 <script>
-                    var map = L.map('mapa-ciudad').setView([43.2561,-79.8729], 12);
+var map = L.map('mapa-ciudad').setView([43.2561,-79.8729], 12);
                     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}@2x.png',{attribution:'&copy; OSM &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
                     L.circle([43.2561,-79.8729],{radius:3000,color:'#8B5CF6',fillColor:'#A78BFA',fillOpacity:0.18,weight:2}).addTo(map).bindPopup('Coverage area — Hamilton');
                 </script>

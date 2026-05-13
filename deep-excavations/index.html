@@ -25,6 +25,11 @@
 
 @media (max-width: 900px) {
     .sidebar { display: none; }
+    .content-area { flex-direction: column; }
+    .container { padding: 1rem; }
+    .header-top { flex-direction: column; text-align: center; }
+    main { padding: 1.5rem; }
+}
 .header-contact a:hover { color: white; }
 main h2 { color: var(--dark); font-size: 1.35rem; margin: 2rem 0 1rem; padding-bottom: .5rem; border-bottom: 2px solid #e2e8f0; font-weight: 600; }
 .sidebar .cat-sub {
@@ -93,13 +98,13 @@ summary::-webkit-details-marker { display: none; }
 .sidebar { padding: .5rem 0; }
 .cta .contacto-line { font-size: 1rem; margin: .5rem 0; }
 .sidebar .cat-toggle[aria-expanded="true"] .cat-arrow { transform: rotate(180deg); display: inline-block; }
-    .content-area { flex-direction: column; }
+    
 .sidebar .cat-sub a {
     display: block; padding: .4rem 1rem .4rem 1.75rem; color: rgba(255,255,255,0.7);
     font-size: .78rem; transition: all .15s; text-decoration: none;
     border-left: 2px solid transparent;
 }
-    .container { padding: 1rem; }
+    
 
 details { margin-bottom: .75rem; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
 .sidebar .cat-name:hover { color: #c9a961; }
@@ -113,7 +118,7 @@ table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: .9r
 details p { padding: .75rem 1.25rem; font-size: .9rem; color: #475569; margin: 0; }
 main p { margin-bottom: 1rem; color: #334155; }
 .cta h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.25rem; color: white; border: none; padding: 0; }
-    .header-top { flex-direction: column; text-align: center; }
+    
 .sidebar .cat-row:hover { background: rgba(255,255,255,0.08); }
 
 #mapa-ciudad { height: 240px; max-width: 630px; margin: 1.5rem auto; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
@@ -131,9 +136,28 @@ body { font-family: var(--font-b); color: var(--text); background: var(--bg); li
 }
 .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 .sidebar .cat-sub a:hover { color: #c9a961; background: rgba(201,169,97,0.06); border-left-color: #c9a961; }
-    main { padding: 1.5rem; }
-a { color: var(--primary); text-decoration: none; }</style>
-<link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#581C87"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></head>
+    
+a { color: var(--primary); text-decoration: none; }
+
+</style>
+<link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#581C87"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><style id="minimal-fix-v5">
+/* Sticky para navbar específicos (NO header.hero) */
+.topbar, .navbar, .header-top, .main-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1010 !important;
+}
+header.hero, .hero { position: relative !important; }
+/* Dropdowns por encima del hero */
+.dd, .has-dd .dd, .nav-item .dd {
+  z-index: 1100 !important;
+}
+/* Leaflet contained */
+.leaflet-pane { z-index: 400 !important; }
+.leaflet-control { z-index: 800 !important; }
+.leaflet-container { z-index: 1 !important; }
+</style>
+</head>
 <body>
 
 <header>
@@ -155,7 +179,7 @@ a { color: var(--primary); text-decoration: none; }</style>
 <div class="container">
     <div class="content-area">
         <aside class="sidebar">
-            <nav><a href="index.html" class="home">Home</a><div class="cat-item" data-cat="investigation"><div class="cat-row"><a href="/investigation/" class="cat-name">Investigation</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Investigation"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/cpt-test/">CPT (Cone Penetration Test)</a></div></div><div class="cat-item" data-cat="lab-in-situ"><div class="cat-row"><a href="/lab-in-situ/" class="cat-name">In-Situ Testing</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir In-Situ Testing"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/sand-cone-density/">Field density test (sand cone method)</a></div></div><div class="cat-item" data-cat="laboratory"><div class="cat-row"><a href="/laboratory/" class="cat-name">Laboratory</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Laboratory"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/atterberg-limits/">Atterberg limits</a><a href="/grain-size/">Grain size analysis (sieve + hydrometer)</a></div></div><div class="cat-item" data-cat="foundations"><div class="cat-row"><a href="/foundations/" class="cat-name">Foundations</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Foundations"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/piles/">Pile foundation design</a></div></div><div class="cat-item" data-cat="slopes"><div class="cat-row"><a href="/slopes/" class="cat-name">Slopes & Walls</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Slopes & Walls"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/anchors/">Active/passive anchor design</a><a href="/retaining-walls/">Retaining wall design</a><a href="/slope-stability/">Slope stability analysis</a></div></div><div class="cat-item" data-cat="ground-improvement"><div class="cat-row"><a href="/ground-improvement/" class="cat-name">Ground improvement</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Ground improvement"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/stone-columns/">Stone column design</a><a href="/vibrocompaction/">Vibrocompaction design</a></div></div><div class="cat-item" data-cat="seismic"><div class="cat-row"><a href="/seismic/" class="cat-name">Seismic</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Seismic"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/seismic-isolation/">Base isolation seismic design</a><a href="/seismic-microzonation/">Seismic microzonation</a><a href="/liquefaction/">Soil liquefaction analysis</a></div></div><div class="cat-item" data-cat="road-geotechnics"><div class="cat-row"><a href="/road-geotechnics/" class="cat-name">Roadway</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Roadway"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/cbr-road/">CBR study for road design</a><a href="/flexible-pavement/">Flexible pavement design</a><a href="/rigid-pavement/">Rigid pavement design</a></div></div><div class="cat-item" data-cat="excavations"><div class="cat-row"><a href="/excavations/" class="cat-name">Underground Excavations</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Underground Excavations"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/soft-ground-tunnels/">Geotechnical analysis for soft soil tunnels</a><a href="/deep-excavations/">Geotechnical design of deep excavations</a><a href="/excavation-monitoring/">Geotechnical excavation monitoring</a></div></div></nav>
+            <nav><a href="index.html" class="home">Home</a><div class="cat-item" data-cat="investigation"><div class="cat-row"><a href="/investigation/" class="cat-name">Investigation</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Investigation"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/cpt-test/">CPT (Cone Penetration Test)</a></div></div><div class="cat-item" data-cat="lab-in-situ"><div class="cat-row"><a href="/lab-in-situ/" class="cat-name">In-Situ</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir In-Situ"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/sand-cone-density/">Field density test (sand cone method)</a></div></div><div class="cat-item" data-cat="laboratory"><div class="cat-row"><a href="/laboratory/" class="cat-name">Laboratory</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Laboratory"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/atterberg-limits/">Atterberg limits</a><a href="/grain-size/">Grain size analysis (sieve + hydrometer)</a></div></div><div class="cat-item" data-cat="foundations"><div class="cat-row"><a href="/foundations/" class="cat-name">Foundations</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Foundations"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/piles/">Pile foundation design</a></div></div><div class="cat-item" data-cat="slopes"><div class="cat-row"><a href="/slopes/" class="cat-name">Slopes & Walls</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Slopes & Walls"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/anchors/">Active/passive anchor design</a><a href="/retaining-walls/">Retaining wall design</a><a href="/slope-stability/">Slope stability analysis</a></div></div><div class="cat-item" data-cat="ground-improvement"><div class="cat-row"><a href="/ground-improvement/" class="cat-name">Improvement</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Improvement"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/stone-columns/">Stone column design</a><a href="/vibrocompaction/">Vibrocompaction design</a></div></div><div class="cat-item" data-cat="seismic"><div class="cat-row"><a href="/seismic/" class="cat-name">Seismic</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Seismic"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/seismic-isolation/">Base isolation seismic design</a><a href="/seismic-microzonation/">Seismic microzonation</a><a href="/liquefaction/">Soil liquefaction analysis</a></div></div><div class="cat-item" data-cat="road-geotechnics"><div class="cat-row"><a href="/road-geotechnics/" class="cat-name">Roadway</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Roadway"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/cbr-road/">CBR study for road design</a><a href="/flexible-pavement/">Flexible pavement design</a><a href="/rigid-pavement/">Rigid pavement design</a></div></div><div class="cat-item" data-cat="excavations"><div class="cat-row"><a href="/excavations/" class="cat-name">Excavations</a><button class="cat-toggle" aria-expanded="false" aria-label="Expandir Excavations"><span class="cat-arrow">▼</span></button></div><div class="cat-sub" hidden><a href="/soft-ground-tunnels/">Geotechnical analysis for soft soil tunnels</a><a href="/deep-excavations/">Geotechnical design of deep excavations</a><a href="/excavation-monitoring/">Geotechnical excavation monitoring</a></div></div></nav>
         </aside>
         <main>
             <section><p>Hamilton's subsurface is a direct product of the Niagara Escarpment, where the overburden transitions sharply from stiff glacial till of the Halton Formation to the fractured shale and dolostone of the Eramosa and Lockport members. In the lower city, you might encounter 3 to 4 meters of fill overlying 8 to 12 meters of soft, compressible lacustrine clay before reaching bedrock, while the mountain brow demands immediate engagement with near-surface rock and the potential for wedge failures controlled by joint sets. Designing a deep excavation here means we are constantly reconciling the high horizontal stresses locked into the Paleozoic bedrock with the practical limits of urban shoring—often within a few meters of century-old brick foundations. The depth to groundwater varies dramatically depending on which side of the escarpment you are on, which directly dictates whether we design a fully tanked structure or can rely on perimeter drainage. A thorough <a data-interlink="1" href="/cpt-test/">cone penetration test</a> becomes essential when navigating the soft clay pockets near the harbour, helping us model undrained shear strength profiles for temporary slope cuts.</p></section>
@@ -195,6 +219,8 @@ a { color: var(--primary); text-decoration: none; }</style>
 
             <section>
                 <h2>Our services</h2>
+<hr style="border:none;height:2px;background:linear-gradient(90deg,transparent,#A16207,transparent);margin:2rem 0;width:60%;margin-left:auto;margin-right:auto">
+
                 <p>A deep excavation design in Hamilton's varied geology requires a suite of integrated services that go far beyond selecting a shoring wall section. We deliver complete packages that address the specific challenges of the escarpment and the harbour basin.</p>
                 <style>.servicios-grid{display:flex;flex-wrap:wrap;gap:1rem;justify-content:flex-start}.servicio-arrow{position:absolute;right:1rem;bottom:.8rem;color:#8B5CF6;font-weight:700;opacity:.55;transition:transform .18s,opacity .18s}.servicios-grid .servicio{flex:0 0 calc(50% - .5rem);min-width:260px;padding:1rem 1.2rem;border:1px solid #E5E7EB;border-radius:10px;background:#FFFFFF;position:relative;transition:border-color .18s,box-shadow .18s,transform .18s}.servicios-grid a.servicio-link:hover{border-color:#8B5CF6;box-shadow:0 4px 14px rgba(0,0,0,.08);transform:translateY(-2px)}.servicios-grid a.servicio-link:hover h3{color:#8B5CF6}.servicios-grid a.servicio-link{display:block;text-decoration:none;color:inherit;cursor:pointer}.servicios-grid a.servicio-link:hover .servicio-arrow{transform:translateX(4px);opacity:1}</style><div class="servicios-grid"><div class="servicio"><h3>Staged Excavation Analysis & Shoring Design</h3><p>We develop fully sequenced 2D and 3D finite element models calibrated with site-specific geotechnical parameters. The design output includes full structural calculations for soldier pile and lagging systems, secant or contiguous pile walls, internal bracing layouts, and tie-back anchor geometry, with every element checked against the limit states in CSA S6-19 and local Hamilton building code amendments for deep foundations and temporary works.</p></div><div class="servicio"><h3>Dewatering and Groundwater Control Plans</h3><p>Drawing on hydrogeological data from the fractured Niagara Escarpment formations, we design dewatering systems ranging from deep well arrays in dolostone to vacuum-assisted wellpoints in silty clay. Each plan includes predicted inflow rates, settlement impact assessments on neighboring structures, and a monitoring trigger plan to activate contingency cut-off measures if groundwater levels deviate from the model.</p></div></div>
             </section>
@@ -210,7 +236,7 @@ a { color: var(--primary); text-decoration: none; }</style>
                 <div id="mapa-ciudad"></div>
                 <script src="/js/leaflet.js"></script>
                 <script>
-                    var map = L.map('mapa-ciudad').setView([43.2561,-79.8729], 12);
+var map = L.map('mapa-ciudad').setView([43.2561,-79.8729], 12);
                     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}@2x.png',{attribution:'&copy; OSM &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
                     L.circle([43.2561,-79.8729],{radius:3000,color:'#8B5CF6',fillColor:'#A78BFA',fillOpacity:0.18,weight:2}).addTo(map).bindPopup('Coverage area — Hamilton');
                 </script>
