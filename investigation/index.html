@@ -178,7 +178,7 @@ header nav a,.menu a{font-size:.78rem !important}
 }
 </style>
 <style id="layout-defensive">
-html,body{overflow-x:hidden;max-width:100vw}
+body{overflow-x:clip;max-width:100vw}
 body>*{max-width:100vw}
 @media (min-width:901px){
   aside{position:relative}
@@ -189,6 +189,62 @@ body>*{max-width:100vw}
   aside{width:100% !important;position:static !important;height:auto !important}
   .navbar{flex-wrap:wrap}
 }
+</style>
+<style id="navbar-fixed-override">
+nav.navbar,.header-top,.main-header{position:fixed !important;top:0 !important;left:0 !important;right:0 !important;z-index:1010 !important}
+body{padding-top:60px}
+.hero,.hero-inner,header.hero{padding-top:1rem !important}
+@media (max-width:900px){body{padding-top:90px}}
+</style>
+<style id="sidebar-hover-fix-v2">
+/* Adaptativo: hover preserva color heredado (white en dark sidebar, dark en light) */
+aside .cat-name:hover,aside .sb-home:hover,aside .cat-sub-wrap a:hover,
+aside nav a:hover{color:inherit !important;text-decoration:underline !important;text-underline-offset:3px}
+aside .cat-name,aside .sb-home,aside nav a{color:inherit}
+/* Bg sutil que funciona en cualquier fondo */
+aside .cat-name:hover,aside .sb-home:hover{background:rgba(127,127,127,.12) !important}
+aside .cat-sub-wrap a:hover{background:rgba(127,127,127,.08) !important}
+</style>
+<style id="cat-toggle-no-box">
+.cat-toggle{width:auto !important;min-width:32px;border:none !important;border-left:none !important;background:transparent !important;box-shadow:none !important;padding:.3rem .5rem !important}
+.cat-toggle:hover{background:rgba(127,127,127,.12) !important}
+.cat-arrow{display:inline-block}
+</style>
+<style id="nav-arrow-no-box">
+.nav-arrow,.nav-arrow:hover,.nav-arrow:focus{background:transparent !important;border:none !important;outline:none !important;padding:0 .15rem !important;color:inherit !important;cursor:pointer !important;box-shadow:none !important}
+</style>
+<style id="post-fixes-v2">
+/* Inline links visibles en prosa */
+p a[href^="/"]:not(.cta-btn):not(.hero-cta):not(.nav-contact-btn){color:var(--accent,#1d4ed8) !important;text-decoration:underline !important;text-decoration-color:rgba(29,78,216,.45);text-underline-offset:2px;font-weight:600}
+p a[href^="/"]:not(.cta-btn):not(.hero-cta):not(.nav-contact-btn):hover{text-decoration-color:currentColor;opacity:.85}
+/* Sidebar hover adaptive */
+aside .cat-name:hover,aside .sb-home:hover,aside .cat-sub-wrap a:hover,
+aside nav a:hover{color:inherit !important;text-decoration:underline !important;text-underline-offset:3px}
+aside .cat-name,aside .sb-home,aside nav a{color:inherit}
+aside .cat-name:hover,aside .sb-home:hover{background:rgba(127,127,127,.12) !important}
+/* Cat-toggle sin caja */
+.cat-toggle{width:auto !important;min-width:32px;border:none !important;border-left:none !important;background:transparent !important;box-shadow:none !important;padding:.3rem .5rem !important}
+.cat-toggle:hover{background:rgba(127,127,127,.12) !important}
+/* Nav-arrow sin caja */
+.nav-arrow,.nav-arrow:hover,.nav-arrow:focus{background:transparent !important;border:none !important;outline:none !important;padding:0 .15rem !important;color:inherit !important;cursor:pointer !important;box-shadow:none !important}
+/* Navbar compacto */
+.navbar{padding:.65rem 1rem !important}
+.navbar .nav{gap:.55rem !important}
+.nav-item{font-size:.74rem !important;letter-spacing:.01em !important}
+.logo-box,.brand-name,.brand{font-size:.82rem !important}
+/* Layout defensive */
+body{overflow-x:clip;max-width:100vw}
+body>*{max-width:100vw}
+</style>
+<style id="nav-fix-v3">
+nav.navbar, header nav, .nav-bar, .top-nav { font-size: 1rem !important; }
+nav.navbar a, header nav a, .nav-bar a, .top-nav a, .nav-cat-link, .nav-item a { font-size: 1rem !important; color: #FFFFFF !important; font-weight: 500 !important; }
+nav.navbar a:hover, header nav a:hover, .nav-cat-link:hover { color: #FCD34D !important; text-decoration: underline; }
+nav[aria-label="breadcrumb"], .crumb, .breadcrumb { color: rgba(255,255,255,.85) !important; font-size: .82rem !important; }
+nav[aria-label="breadcrumb"] a, .crumb a, .breadcrumb a { color: #FFFFFF !important; text-decoration: underline; font-weight: 600; }
+nav[aria-label="breadcrumb"] a:hover, .crumb a:hover { color: #FCD34D !important; }
+.crumb a[href="/"], .breadcrumb a[href="/"], a.home-link { color: #FFFFFF !important; }
+.brand-name, .logo-text, .main, .brand { color: #FFFFFF !important; }
 </style>
 </head>
 <body>
@@ -217,11 +273,11 @@ body>*{max-width:100vw}
         <main>
 <section class="block" style="padding:2rem 1.5rem"><div style="max-width:1200px;margin:0 auto">
 
+
+<img src="/img/ensayo-proctor-1.webp" alt="Investigation in Hamilton" loading="lazy" decoding="async" style="width:100%;max-height:220px;object-fit:cover;display:block;border-radius:6px;margin:1.5rem 0">
 <p>Geotechnical investigation in Hamilton, Ontario, is a critical first step in any construction or infrastructure project, designed to characterize the subsurface conditions that will directly influence foundation design and long-term structural performance. The city's complex geological setting, shaped by glacial Lake Iroquois and the Niagara Escarpment, results in highly variable soil profiles ranging from dense silty clay tills like the Halton Till to glaciolacustrine deposits and shale bedrock of the Queenston Formation. A robust investigation, guided by the Ontario Building Code (OBC) and Canadian Foundation Engineering Manual (CFEM), must assess these materials to mitigate risks such as differential settlement, slope instability on the escarpment, and high groundwater tables. Our comprehensive <a href="/investigation/">investigation services</a> integrate these regulatory and geological frameworks, often beginning with a detailed review of regional Quaternary geology maps and historical well records.</p>
 <p>The methodology for subsurface exploration in Canada adheres strictly to the standards set by the Canadian Standards Association (CSA) and ASTM International, ensuring data integrity and repeatability. We deploy a phased approach, starting with advanced geophysical techniques and direct-push technology, including the <a href="/cpt-test/">CPT (Cone Penetration Test)</a>, which provides continuous real-time profiles of soil stratigraphy and is particularly effective for identifying sensitive clay layers common in the region. This is supplemented by conventional borehole drilling where disturbed and undisturbed samples are retrieved for laboratory classification. Our in-house capabilities are central to this process; fundamental index tests such as <a href="/atterberg-limits/">Atterberg limits</a> and <a href="/grain-size/">grain size analysis (sieve + hydrometer)</a> are performed to precisely classify the fine-grained tills and silts, quantifying their plasticity and drainage characteristics. For fill compaction control, we conduct <a href="/sand-cone-density/">field density testing using the sand cone method</a> to verify compliance with project specifications.</p>
 <p>Typical projects across Hamilton, from the waterfront industrial zones and downtown redevelopments to residential expansions in Stoney Creek and Ancaster, present distinct geotechnical challenges that our <a href="/lab-in-situ/">In-Situ and laboratory analysis</a> are designed to address. On brownfield sites near the harbour, investigations focus on detecting fill materials, chemical contaminants, and assessing liquefaction potential. For escarpment-edge developments, the focus shifts to rock fracture mapping, bedding plane orientation, and stability analysis to prevent slope failure. Infrastructure projects, such as road widening and sewer installations through the deep clay plains, rely heavily on our data to predict settlement magnitudes and rates, ensuring that new structures do not negatively impact adjacent heritage buildings. Each context demands a tailored investigation strategy that moves from preliminary reconnaissance to a detailed design-phase model.</p>
-<img src="/img/ensayo-proctor-1.webp" alt="Investigation in Hamilton" loading="lazy" decoding="async" style="width:100%;max-height:220px;object-fit:cover;display:block;border-radius:6px;margin:1.5rem 0">
-
 <p>The investigative process delivers a clear, actionable geotechnical report that moves beyond raw data to provide specific engineering recommendations. Upon completing the field program and rigorous laboratory schedule, our engineers synthesize the stratigraphic model with the structural loads to produce a final document containing foundation options, bearing capacities, pavement design parameters, and earthwork specifications. The core value proposition is risk reduction: by accurately defining the ground conditions, we eliminate costly over-conservatism and prevent construction delays caused by unforeseen subsurface obstacles, ensuring your project in Hamilton is founded on certainty and technical compliance.</p></div></section>
 <section class="block" style="padding:2rem 1.5rem"><div style="max-width:1200px;margin:0 auto"><h2 style="margin-bottom:1.5rem;font-weight:700">Available services</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem"><a href="../cpt-test/" style="display:block;padding:1.2rem;border:1px solid #E5E7EB;border-radius:10px;text-decoration:none;color:inherit;background:#FFFFFF;transition:all .2s;box-shadow:0 1px 2px rgba(0,0,0,.04)" onmouseover="this.style.borderColor='#F43F5E';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 14px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='#E5E7EB';this.style.transform='translateY(0)';this.style.boxShadow='0 1px 2px rgba(0,0,0,.04)'"><h3 style="margin:0 0 .4rem;font-size:1.1rem">CPT (Cone Penetration Test)</h3><span style="font-size:.85rem;color:#666">→ Ver detalle</span></a></div></div></section>
 
@@ -248,7 +304,7 @@ body>*{max-width:100vw}
   L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}@2x.png",{
     attribution:"&copy; OpenStreetMap contributors &copy; CARTO",maxZoom:19,subdomains:"abcd"
   }).addTo(m);
-  L.marker([43.2561,-79.8729],{icon:L.icon({iconUrl:'/css/images/marker-icon.png',iconRetinaUrl:'/css/images/marker-icon-2x.png',shadowUrl:'/css/images/marker-shadow.png',iconSize:[25,41],iconAnchor:[12,41],popupAnchor:[1,-34],shadowSize:[41,41]})}).addTo(m).bindPopup("Coverage area — Hamilton");
+  L.marker([43.2561,-79.8729],{icon:L.divIcon({html:'<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 36\" width=\"24\" height=\"36\"><path d=\"M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z\" fill=\"#E11D48\" stroke=\"#FFF\" stroke-width=\"1.5\"/><circle cx=\"12\" cy=\"12\" r=\"4\" fill=\"#FFF\"/></svg>',className:'',iconSize:[24,36],iconAnchor:[12,36],popupAnchor:[0,-32]})}).addTo(m).bindPopup("Coverage area — Hamilton");
 })();
 </script>
 </div>
